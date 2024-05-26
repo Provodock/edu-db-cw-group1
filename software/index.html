@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Реалізація інформаційного та програмного забезпечення | IO-25 Система організації та управління опитуваннями експертів</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/edu-db-cw-group1/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="description" content="Лабораторні роботи з дисципліни "Бази даних"">
+    
+    <link rel="preload" href="/edu-db-cw-group1/assets/css/0.styles.f2093034.css" as="style"><link rel="preload" href="/edu-db-cw-group1/assets/js/app.49a2d881.js" as="script"><link rel="preload" href="/edu-db-cw-group1/assets/js/2.da7fd81e.js" as="script"><link rel="preload" href="/edu-db-cw-group1/assets/js/23.702d3985.js" as="script"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/10.a4b32e52.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/11.13ec7079.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/12.402ac58a.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/13.8c781048.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/14.feec8449.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/15.2fd3d02a.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/16.c616848f.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/17.02544b64.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/18.5327cfed.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/19.4fd2769d.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/20.b41fdaa3.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/21.d3fdac50.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/22.33e1e7cf.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/24.8c166692.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/25.1eeb5b37.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/26.692a3120.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/3.afbf6deb.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/4.ae6a6bfd.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/5.125f3ffb.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/6.07205bb4.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/7.213601b9.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/8.1764375e.js"><link rel="prefetch" href="/edu-db-cw-group1/assets/js/9.1f621b48.js">
+    <link rel="stylesheet" href="/edu-db-cw-group1/assets/css/0.styles.f2093034.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/edu-db-cw-group1/" class="home-link router-link-active"><!----> <span class="site-name">IO-25 Система організації та управління опитуваннями експертів</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/edu-db-cw-group1/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/Provodock/edu-db-cw-group1" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/edu-db-cw-group1/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/Provodock/edu-db-cw-group1" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/edu-db-cw-group1/intro/" class="sidebar-link">Вступ</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/edu-db-cw-group1/requirements/" class="sidebar-heading clickable"><span>Розроблення загальних вимог до системи</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/edu-db-cw-group1/use%20cases/" class="sidebar-link">Розроблення вимог до функціональности системи</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#перелік-існуючих-документів-у-нашому-проекті" class="sidebar-link">Перелік існуючих документів у нашому проекті</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#загальна-схема" class="sidebar-link">Загальна схема</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#схема-кліента" class="sidebar-link">Схема кліента</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#схема-експерта" class="sidebar-link">Схема експерта</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#сценаріі-використання" class="sidebar-link">Сценарії використання</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#user-signup" class="sidebar-link">USER.SIGNUP</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#user-signin" class="sidebar-link">USER.SIGNIN</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-create" class="sidebar-link">SURVEY.CREATE</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-close" class="sidebar-link">SURVEY.CLOSE</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-get-results" class="sidebar-link">SURVEY.GET_RESULTS</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-add-question" class="sidebar-link">SURVEY.ADD_QUESTION</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-delete-question" class="sidebar-link">SURVEY.DELETE_QUESTION</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#expert-take-survey" class="sidebar-link">EXPERT.TAKE_SURVEY</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#expert-change-answers" class="sidebar-link">EXPERT.CHANGE_ANSWERS</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-export" class="sidebar-link">SURVEY.EXPORT</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-share" class="sidebar-link">SURVEY.SHARE</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/use%20cases/#survey-get-question" class="sidebar-link">SURVEY.GET_QUESTION</a></li></ul></li></ul></li><li><a href="/edu-db-cw-group1/design/" class="sidebar-link">Проектування інформаційного забезпечення</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/design/#модель-бізнес-об-єктів" class="sidebar-link">Модель бізнес об'єктів</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/design/#er-модель" class="sidebar-link">ER-модель</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/design/#реляціина-схема" class="sidebar-link">Реляційна схема</a></li></ul></li><li><a href="/edu-db-cw-group1/software/" aria-current="page" class="active sidebar-link">Реалізація інформаційного та програмного забезпечення</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/software/#sql-скрипт-для-створення-на-початкового-наповнення-бази-даних" class="sidebar-link">SQL-скрипт для створення на початкового наповнення бази даних</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/software/#restfull-сервіс-для-управління-даними" class="sidebar-link">RESTfull сервіс для управління даними</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/software/#фаил-app-py" class="sidebar-link">Файл app.py</a></li></ul></li></ul></li><li><a href="/edu-db-cw-group1/test/" class="sidebar-link">Тестування працездатності системи</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/test/#засоби-тестування" class="sidebar-link">Засоби тестування</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/test/#отримання-інформаціі-по-всім-states" class="sidebar-link">Отримання інформації по всім States</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/test/#створення-нового-стану" class="sidebar-link">Створення нового стану</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/test/#оновлення-стану" class="sidebar-link">Оновлення стану</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/test/#видалення-стану" class="sidebar-link">Видалення стану</a></li><li class="sidebar-sub-header"><a href="/edu-db-cw-group1/test/#фінальна-таблиця-після-всіх-маніпуляціи" class="sidebar-link">Фінальна таблиця після всіх маніпуляцій</a></li></ul></li></ul></li><li><a href="/edu-db-cw-group1/conclusion/" class="sidebar-link">Висновки</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="реалізація-інформаціиного-та-програмного-забезпечення"><a href="#реалізація-інформаціиного-та-програмного-забезпечення" class="header-anchor">#</a> Реалізація інформаційного та програмного забезпечення</h1> <h2 id="sql-скрипт-для-створення-на-початкового-наповнення-бази-даних"><a href="#sql-скрипт-для-створення-на-початкового-наповнення-бази-даних" class="header-anchor">#</a> SQL-скрипт для створення на початкового наповнення бази даних</h2> <div class="language- extra-class"><pre><code>-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema quiz
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `quiz` ;
+
+-- -----------------------------------------------------
+-- Schema quiz
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `quiz` DEFAULT CHARACTER SET utf8 ;
+USE `quiz` ;
+
+-- -----------------------------------------------------
+-- Table `quiz`.`Role`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`Role` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`Role` (
+`id` INT NOT NULL,
+`name` VARCHAR(32) NULL,
+PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`Permission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`Permission` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`Permission` (
+`id` INT NOT NULL,
+`name` VARCHAR(32) NULL,
+PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`Grant`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`Grant` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`Grant` (
+`id` INT NOT NULL,
+`appointed` DATE NULL,
+`Role_id` INT NOT NULL,
+`Permission_id` INT NOT NULL,
+PRIMARY KEY (`id`, `Role_id`, `Permission_id`),
+INDEX `fk_Grant_Role1_idx` (`Role_id` ASC) VISIBLE,
+INDEX `fk_Grant_Permission1_idx` (`Permission_id` ASC) VISIBLE,
+CONSTRAINT `fk_Grant_Role1`
+FOREIGN KEY (`Role_id`)
+REFERENCES `quiz`.`Role` (`id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT `fk_Grant_Permission1`
+FOREIGN KEY (`Permission_id`)
+REFERENCES `quiz`.`Permission` (`id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`User`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`User` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`User` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`first_name` VARCHAR(45) NULL,
+`last_name` VARCHAR(45) NULL,
+`nick_name` VARCHAR(45) NULL,
+`email` VARCHAR(128) NULL,
+`password` VARCHAR(64) NULL,
+`Role_id` INT NOT NULL,
+PRIMARY KEY (`id`, `Role_id`),
+INDEX `fk_User_Role1_idx` (`Role_id` ASC) VISIBLE,
+UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+UNIQUE INDEX `nick_name_UNIQUE` (`nick_name` ASC) VISIBLE,
+CONSTRAINT `fk_User_Role1`
+FOREIGN KEY (`Role_id`)
+REFERENCES `quiz`.`Role` (`id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`Survey`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`Survey` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`Survey` (
+`id` INT NOT NULL,
+`title` VARCHAR(45) NULL,
+`description` LONGTEXT NULL,
+`created` DATE NULL,
+`User_id` INT NOT NULL,
+`User_Role_id` INT NOT NULL,
+PRIMARY KEY (`id`, `User_id`, `User_Role_id`),
+INDEX `fk_Survey_User1_idx` (`User_id` ASC, `User_Role_id` ASC) VISIBLE,
+CONSTRAINT `fk_Survey_User1`
+FOREIGN KEY (`User_id` , `User_Role_id`)
+REFERENCES `quiz`.`User` (`id` , `Role_id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`Question`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`Question` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`Question` (
+`id` INT NOT NULL,
+`text` LONGTEXT NULL,
+`type` VARCHAR(32) NULL,
+`Survey_id` INT NOT NULL,
+`Survey_User_id` INT NOT NULL,
+`Survey_User_Role_id` INT NOT NULL,
+PRIMARY KEY (`id`, `Survey_id`, `Survey_User_id`, `Survey_User_Role_id`),
+INDEX `fk_Question_Survey1_idx` (`Survey_id` ASC, `Survey_User_id` ASC, `Survey_User_Role_id` ASC) VISIBLE,
+CONSTRAINT `fk_Question_Survey1`
+FOREIGN KEY (`Survey_id` , `Survey_User_id` , `Survey_User_Role_id`)
+REFERENCES `quiz`.`Survey` (`id` , `User_id` , `User_Role_id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`Answer`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`Answer` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`Answer` (
+`id` INT NOT NULL,
+`text` LONGTEXT NULL,
+`User_id` INT NOT NULL,
+`User_Role_id` INT NOT NULL,
+`Question_id` INT NOT NULL,
+`Question_Survey_id` INT NOT NULL,
+`Question_Survey_User_id` INT NOT NULL,
+`Question_Survey_User_Role_id` INT NOT NULL,
+PRIMARY KEY (`id`, `User_id`, `User_Role_id`, `Question_id`, `Question_Survey_id`, `Question_Survey_User_id`, `Question_Survey_User_Role_id`),
+INDEX `fk_Answer_User1_idx` (`User_id` ASC, `User_Role_id` ASC) VISIBLE,
+INDEX `fk_Answer_Question1_idx` (`Question_id` ASC, `Question_Survey_id` ASC, `Question_Survey_User_id` ASC, `Question_Survey_User_Role_id` ASC) VISIBLE,
+CONSTRAINT `fk_Answer_User1`
+FOREIGN KEY (`User_id` , `User_Role_id`)
+REFERENCES `quiz`.`User` (`id` , `Role_id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT `fk_Answer_Question1`
+FOREIGN KEY (`Question_id` , `Question_Survey_id` , `Question_Survey_User_id` , `Question_Survey_User_Role_id`)
+REFERENCES `quiz`.`Question` (`id` , `Survey_id` , `Survey_User_id` , `Survey_User_Role_id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`State`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`State` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`State` (
+`id` INT NOT NULL,
+`name` VARCHAR(32) NULL,
+PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quiz`.`Action`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quiz`.`Action` ;
+
+CREATE TABLE IF NOT EXISTS `quiz`.`Action` (
+`id` INT NOT NULL,
+`date` DATE NULL,
+`Survey_id` INT NOT NULL,
+`Survey_User_id` INT NOT NULL,
+`Survey_User_Role_id` INT NOT NULL,
+`Role_id` INT NOT NULL,
+`State_id` INT NOT NULL,
+PRIMARY KEY (`id`, `Survey_id`, `Survey_User_id`, `Survey_User_Role_id`, `Role_id`, `State_id`),
+INDEX `fk_Action_Survey1_idx` (`Survey_id` ASC, `Survey_User_id` ASC, `Survey_User_Role_id` ASC) VISIBLE,
+INDEX `fk_Action_Role1_idx` (`Role_id` ASC) VISIBLE,
+INDEX `fk_Action_State1_idx` (`State_id` ASC) VISIBLE,
+CONSTRAINT `fk_Action_Survey1`
+FOREIGN KEY (`Survey_id` , `Survey_User_id` , `Survey_User_Role_id`)
+REFERENCES `quiz`.`Survey` (`id` , `User_id` , `User_Role_id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT `fk_Action_Role1`
+FOREIGN KEY (`Role_id`)
+REFERENCES `quiz`.`Role` (`id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT `fk_Action_State1`
+FOREIGN KEY (`State_id`)
+REFERENCES `quiz`.`State` (`id`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+</code></pre></div><h2 id="restfull-сервіс-для-управління-даними"><a href="#restfull-сервіс-для-управління-даними" class="header-anchor">#</a> RESTfull сервіс для управління даними</h2> <p>RESTfull сервіс для управління таблиці User у базі даних 'quiz' створеної в MySQL. Цей застосунок був створений за допомогою
+фреймворку Flask на мові Python.
+RESTfull сервіс представляє собою базовий CRUD застосунок, тобто &quot;Набор джентельмена&quot;, Create, Read, Update і Delete.</p> <h3 id="фаил-app-py"><a href="#фаил-app-py" class="header-anchor">#</a> Файл app.py</h3> <div class="language- extra-class"><pre><code>    from flask import Flask, request, jsonify
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Koftatfok@localhost/quiz'
+db = SQLAlchemy(app)
+
+class State(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), nullable=False)
+
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+@app.route('/states', methods=['GET'])
+def get_states():
+    states = State.query.all()
+    result = [{'id': state.id, 'state': state.name} for state in states]
+    return jsonify(result)
+
+@app.route('/states', methods=['POST'])
+def create_state():
+    data = request.get_json()
+    id = data.get('id')
+    name = data.get('state')
+
+    if not id or not name:
+        return jsonify({'error': 'Ідентифікатор та стан обов`язкові'}), 400
+
+    existing_state = State.query.filter_by(id=id).first()
+    if existing_state:
+        return jsonify({'error': f'Стан з ідентифікатором {id} вже існує'}), 409
+
+    existing_state = State.query.filter_by(name=name).first()
+    if existing_state:
+        return jsonify({'error': f'Стан  {name} вже існує'}), 409
+
+    new_state = State(id=id, name=name)
+    db.session.add(new_state)
+    db.session.commit()
+
+    return jsonify({'message': f'Стан {name} з ідентифікатором {id}  створено успішно'}), 201
+
+@app.route('/states/&lt;int:id&gt;', methods=['PUT'])
+def update_state(id):
+    state = State.query.get(id)
+
+    if not state:
+        return jsonify({'error': f'Стан з ідентифікатором {id} не знайдено'}), 404
+
+    data = request.get_json()
+    name = data.get('state')
+
+    if not name:
+        return jsonify({'error': 'Стан обов`язковий'}), 400
+
+    existing_state = State.query.filter(State.name == name, State.id != id).first()
+    if existing_state:
+        return jsonify({'error': f'Стан {name} вже існує'}), 409
+
+    state.name = name
+    db.session.commit()
+
+    return jsonify({'message': f'Стан з ідентифікатором {id} оновлено успішно, по новому - {name}'})
+
+@app.route('/states/&lt;int:id&gt;', methods=['DELETE'])
+def delete_state(id):
+    state = State.query.get(id)
+
+    if not state:
+        return jsonify({'error': f'Стан з ідентифікатором {id} не знайдено'}), 404
+    state_name = state.name
+
+    db.session.delete(state)
+    db.session.commit()
+    return jsonify({'message': f'Стан {state_name} з ідентифікатором {id} видалено успішно'})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Останнє оновлення:</span> <span class="time">5/26/2024, 9:20:47 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/edu-db-cw-group1/design/" class="prev">
+        Проектування інформаційного забезпечення
+      </a></span> <span class="next"><a href="/edu-db-cw-group1/test/">
+        Тестування працездатності системи
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/edu-db-cw-group1/assets/js/app.49a2d881.js" defer></script><script src="/edu-db-cw-group1/assets/js/2.da7fd81e.js" defer></script><script src="/edu-db-cw-group1/assets/js/23.702d3985.js" defer></script>
+  </body>
+</html>
