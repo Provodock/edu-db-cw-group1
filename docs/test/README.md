@@ -1,53 +1,46 @@
 # Тестування працездатності системи
 
 
-
 ## Засоби тестування
 Тестування CRUD застосунку проводиться за допомогою online Postman.
 
-Примітка: Перед цим необхідно інсталювати Postman Agent, щоб тестувати запроси на локальному сервері.
+Примітка: Перед цим необхідно інсталювати Postman, щоб тестувати запроси на локальному сервері.
 
-### Отримання інформації по всім Useram
+### Отримання інформації по всім States
 
-<img src="./media_labs6/Users.png">
+<img src="./media_labs6/State_get.png">
 
-<img src="./media_labs6/Users1.png">
 
-### Отримання інформації по id Usera
+### Створення нового стану
 
-<img src="./media_labs6/User_id.png">
+<img src="./media_labs6/State_post_1.png">
 
-### Створення нового юзера
+<img src="./media_labs6/State_post_2.png">
 
-<img src="./media_labs6/User_created.png">
+<img src="./media_labs6/State_post_3.png">
 
-#### Помилка створення юзера по причині: "Така пошта вже існує"
 
-<img src="./media_labs6/User_email.png">
+### Оновлення стану
 
-#### Помилка створення юзера по причині: "Такий нікнейм вже існує"
+<img src="./media_labs6/State_put_1.png">
 
-<img src="./media_labs6/User_nickname.png">
+<img src="./media_labs6/State_put_2.png">
 
-### Видалення юзеру
 
-<img src="./media_labs6/User_delete.png">
+### Видалення стану
 
-#### Помилка видалення юзеру по причині: "Такого юзеру не знайдено"
+<img src="./media_labs6/State_deleted_1.png">
 
-<img src="./media_labs6/User_not_found.png">
+<img src="./media_labs6/State_deleted_2.png">
 
-### Вміст таблиці 'User' у базі 'quiz' даних після видалення юзеру
 
-<img src="./media_labs6/User_delete_SQL.png">
+### Фінальна таблиця після всіх маніпуляцій
 
-### Оновлення юзеру
+<img src="./media_labs6/Tabl.png">
 
-<img src="./media_labs6/User_update.png">
 
-### Вміст таблиці 'User' у базі 'quiz'  даних після виконання усіх операцій
 
-<img src="./media_labs6/Users_SQL.png">
+
 
 
 
